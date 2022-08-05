@@ -254,7 +254,7 @@
     "type": "number",
     "label": "Border width (in px)",
     "value": 3,
-    "min": 1,
+    "min": 0,
     "step": 1,
     "group": "Timer Text Styles"
   },
