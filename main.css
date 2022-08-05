@@ -1,0 +1,19 @@
+#timer {
+  font-family: {timerTextFont}, sans-serif;
+  font-size: {timerTextFontSize}px;
+  font-weight: {timerTextFontWeight};
+  text-align: {timerTextAlign};
+  color: {timerTextColor};
+  -webkit-text-stroke: {timerTextBorderWidth}px {timerTextBorderColor};
+  text-shadow: {timerTextHShadow}px {timerTextVShadow}px {timerTextBlur}px {timerTextShadowColor};
+}
+
+#event-text {
+  font-family: {eventTextFont}, sans-serif;
+  font-size: {eventTextFontSize}px;
+  font-weight: {eventTextFontWeight};
+  text-align: {eventTextAlign};
+  color: {eventTextColor};
+  -webkit-text-stroke: {eventTextBorderWidth}px {eventTextBorderColor};
+  text-shadow: {eventTextHShadow}px {eventTextVShadow}px {eventTextBlur}px {eventTextShadowColor};
+}
