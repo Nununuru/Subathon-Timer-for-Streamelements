@@ -1,6 +1,6 @@
 {
   "timerStartValueHours": {
-  	"type": "number",
+    "type": "number",
     "label": "Start value hours",
     "value": 2,
     "min": 0,
@@ -8,7 +8,7 @@
     "group": "Timer Settings"
   },
   "timerStartValueMinutes": {
-  	"type": "number",
+    "type": "number",
     "label": "Start value minutes (max: 59)",
     "value": 0,
     "min": 0,
@@ -17,7 +17,7 @@
     "group": "Timer Settings"
   },
   "timerStartValue": {
-  	"type": "number",
+    "type": "number",
     "label": "Start value seconds (max: 59)",
     "value": 0,
     "min": 0,
@@ -26,13 +26,13 @@
     "group": "Timer Settings"
   },
   "timerMaxValueEnabled": {
-  	"type": "checkbox",
+    "type": "checkbox",
     "label": "Enable max time that can be added",
     "value": false,
     "group": "Timer Settings"
   },
   "timerMaxValueHours": {
-  	"type": "number",
+    "type": "number",
     "label": "Max time hours",
     "value": 0,
     "min": 0,
@@ -40,7 +40,7 @@
     "group": "Timer Settings"
   },
   "timerMaxValueMinutes": {
-  	"type": "number",
+    "type": "number",
     "label": "Max time minutes (max: 59)",
     "value": 0,
     "min": 0,
@@ -48,7 +48,7 @@
     "group": "Timer Settings"
   },
   "timerMaxValueSeconds": {
-  	"type": "number",
+    "type": "number",
     "label": "Max time seconds (max: 59)",
     "value": 0,
     "min": 0,
@@ -57,31 +57,31 @@
   },
 
   "enableEventText": {
-  	"type": "checkbox",
+    "type": "checkbox",
     "label": "Display events",
     "value": true,
     "group": "Event text Settings"
   },
   "timerEventText": {
-  	"type": "text",
+    "type": "text",
     "value": "[viewer] increased timer by [amount] seconds",
     "group": "Event text Settings"
   },
   "timerEventTextDuration": {
-  	"type": "text",
+    "type": "text",
     "label": "Duration (in seconds)",
     "value": "4",
     "group": "Event text Settings"
   },
 
   "followEnabled": {
-  	"type": "checkbox",
+    "type": "checkbox",
     "label": "Enable follow events (in seconds)",
     "value": true,
     "group": "Follow Events"
   },
   "followIncrease": {
-  	"type": "number",
+    "type": "number",
     "value": 1,
     "min": 0,
     "step": 1,
@@ -89,13 +89,13 @@
   },
 
   "sub1Enabled": {
-  	"type": "checkbox",
+    "type": "checkbox",
     "label": "Enable tier 1/prime sub events",
     "value": true,
     "group": "Sub Events"
   },
   "sub1Increase": {
-  	"type": "number",
+    "type": "number",
     "value": 10,
     "min": 0,
     "step": 1,
@@ -103,13 +103,13 @@
   },
 
   "sub2Enabled": {
-  	"type": "checkbox",
+    "type": "checkbox",
     "label": "Enable tier 2 sub events",
     "value": true,
     "group": "Sub Events"
   },
   "sub2Increase": {
-  	"type": "number",
+    "type": "number",
     "value": 20,
     "min": 0,
     "step": 1,
@@ -117,13 +117,13 @@
   },
 
   "sub3Enabled": {
-  	"type": "checkbox",
+    "type": "checkbox",
     "label": "Enable tier 3 sub events",
     "value": true,
     "group": "Sub Events"
   },
   "sub3Increase": {
-  	"type": "number",
+    "type": "number",
     "value": 50,
     "min": 0,
     "step": 1,
@@ -131,13 +131,13 @@
   },
 
   "cheersEnabled": {
-  	"type": "checkbox",
+    "type": "checkbox",
     "label": "Enable cheer events (per bit)",
     "value": true,
     "group": "Cheer Events"
   },
   "cheersIncrease": {
-  	"type": "number",
+    "type": "number",
     "value": 0.1,
     "min": 0,
     "step": 0.1,
@@ -145,13 +145,13 @@
   },
 
   "tipsEnabled": {
-  	"type": "checkbox",
+    "type": "checkbox",
     "label": "Enable tip events (per 1 unit)",
     "value": true,
     "group": "Tip Events"
   },
   "tipsIncrease": {
-  	"type": "number",
+    "type": "number",
     "value": 10,
     "min": 0,
     "step": 1,
@@ -159,13 +159,13 @@
   },
 
   "raidsEnabled": {
-  	"type": "checkbox",
+    "type": "checkbox",
     "label": "Enable raid events (per viewer)",
     "value": true,
     "group": "Raid Events"
   },
   "raidsIncrease": {
-  	"type": "number",
+    "type": "number",
     "value": 1,
     "min": 0,
     "step": 1,
@@ -173,7 +173,7 @@
   },
   
   "commandWord": {
-  	"type": "text",
+    "type": "text",
     "label": "Command Word (case insensitive)",
     "value": "!timer",
     "group": "Command Settings"
@@ -186,7 +186,7 @@
   },
   
   "happyHourCommand": {
-  	"type": "text",
+    "type": "text",
     "label": "Command Word (case insensitive)",
     "value": "!happy",
     "group": "Happy Hour Settings"
@@ -209,13 +209,13 @@
   },
   
   "timerTextFont": {
-  	"type": "googleFont",
+    "type": "googleFont",
     "label": "Font family",
     "value": "Roboto",
     "group": "Timer Text Styles"
   },
   "timerTextFontSize": {
-  	"type": "number",
+    "type": "number",
     "label": "Font size (in px)",
     "value": 80,
     "min": 1,
@@ -223,7 +223,7 @@
     "group": "Timer Text Styles"
   },
   "timerTextFontWeight": {
-  	"type": "dropdown",
+    "type": "dropdown",
     "label": "Font weight",
     "value": "normal",
     "options": {
@@ -234,7 +234,7 @@
     "group": "Timer Text Styles"
   },
   "timerTextAlign": {
-  	"type": "dropdown",
+    "type": "dropdown",
     "label": "Alignment",
     "value": "center",
     "options": {
@@ -251,7 +251,7 @@
     "group": "Timer Text Styles"
   },
   "timerTextBorderWidth": {
-  	"type": "number",
+    "type": "number",
     "label": "Border width (in px)",
     "value": 3,
     "min": 1,
@@ -265,7 +265,7 @@
     "group": "Timer Text Styles"
   },
   "timerTextHShadow": {
-  	"type": "number",
+    "type": "number",
     "label": "Horizontal Shadow spread (in px)",
     "value": 5,
     "min": 0,
@@ -273,7 +273,7 @@
     "group": "Timer Text Styles"
   },
   "timerTextVShadow": {
-  	"type": "number",
+    "type": "number",
     "label": "Vertical Shadow spread (in px)",
     "value": 5,
     "min": 0,
@@ -281,7 +281,7 @@
     "group": "Timer Text Styles"
   },
   "timerTextBlur": {
-  	"type": "number",
+    "type": "number",
     "label": "Shadow blur (in px)",
     "value": 10,
     "min": 0,
@@ -296,13 +296,13 @@
   },
   
   "eventTextFont": {
-  	"type": "googleFont",
+    "type": "googleFont",
     "label": "Font family",
     "value": "Roboto",
     "group": "Event Text Styles"
   },
   "eventTextFontSize": {
-  	"type": "number",
+    "type": "number",
     "label": "Font size (in px)",
     "value": 60,
     "min": 1,
@@ -310,7 +310,7 @@
     "group": "Event Text Styles"
   },
   "eventTextFontWeight": {
-  	"type": "dropdown",
+    "type": "dropdown",
     "label": "Font weight",
     "value": "normal",
     "options": {
@@ -321,7 +321,7 @@
     "group": "Event Text Styles"
   },
   "eventTextAlign": {
-  	"type": "dropdown",
+    "type": "dropdown",
     "label": "Alignment",
     "value": "center",
     "options": {
@@ -338,7 +338,7 @@
     "group": "Event Text Styles"
   },
   "eventTextBorderWidth": {
-  	"type": "number",
+    "type": "number",
     "label": "Border width (in px)",
     "value": 2,
     "min": 1,
@@ -352,7 +352,7 @@
     "group": "Event Text Styles"
   },
   "eventTextHShadow": {
-  	"type": "number",
+    "type": "number",
     "label": "Horizontal Shadow spread (in px)",
     "value": 2,
     "min": 0,
@@ -360,7 +360,7 @@
     "group": "Event Text Styles"
   },
   "eventTextVShadow": {
-  	"type": "number",
+    "type": "number",
     "label": "Vertical Shadow spread (in px)",
     "value": 2,
     "min": 0,
@@ -368,7 +368,7 @@
     "group": "Event Text Styles"
   },
   "eventTextBlur": {
-  	"type": "number",
+    "type": "number",
     "label": "Shadow blur (in px)",
     "value": 8,
     "min": 0,
