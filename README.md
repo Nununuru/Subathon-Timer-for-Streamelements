@@ -1,5 +1,5 @@
 # Subatimer Subathon Timer for StreamElements
-Subathon Timer for StreamElements. This is a custom StreamElements widget. 
+Subathon Timer for StreamElements. This is a custom StreamElements widget.
 
 ## Setup
 1. Login to StreamElements
@@ -13,7 +13,7 @@ Subathon Timer for StreamElements. This is a custom StreamElements widget.
 ## Settings
 ### Timer Settings
 Configure the start value of the timer.
-- `Start value hours`: Hours to start with 
+- `Start value hours`: Hours to start with
 - `Start value minutes (max: 59)`: Minutes to start with
 - `Start value seconds (max: 59)`: Seconds to start with
 
@@ -65,7 +65,14 @@ Start each command with the command word you set followed by the argument (`!tim
 - `Happy Hour Duration (in hours)`: With how much the added time will be multiplied during happy hours.
 #### How to
 To start and cancel happy hours you need to use the command word specified for happy hours followed by the argument (`!happy <argument>`). Here are all available options:
-- `start <type>`: Start happy hour with a specific type (`follows`, `subs`, `tips`, `cheers`/`bits` and  `raids`). If started all events of the type that was specified will be multiplied with the multiplier from the settings. You can only start ONE happy hour for one type at a time. Starting another will override the last one.
+- `start <type>`: Start happy hour with a specific type (`follows`, `subs`, `tips`, `cheers`/`bits` and  `raids`). If started all events of the type that was specified will be multiplied with the multiplier from the settings. You can only start ONE happy hour for one type at a time. Starting another will override the last one. <br>Example:
+```
+!happy start follows // Will start happy hour for follows
+
+!happy start bits // Will overwrite current happy hour & restarts duration
+
+!happy cancel // Will cancel currently active happy hour
+```
 - `cancel`: Cancel currently active happy hour.
 
 ### Timer Text Styles
@@ -88,3 +95,6 @@ Style the text of the event messages displayed beneath the time.
 ## Q&A
 ### Can I use Subatimer with other services (e.g. tipeeestream, streamlabs, etc.)?
 This timer only works in StreamElements. However, since everything except donations comes from Twitch (follows, subs, cheers) you could use StreamElements and this widget additionally to whichever service you are using. Keep in mind that your mods (or you) have to add donations manually to the timer in that case.
+### Can I disable the shadow (or border)?
+There is no direct setting to disable the shadow (or border). However, you can hide them by editing the color and using the transparency control and make the element fully transparent. This will basically hide it.
+For the border yo could also just turn the width to 0.

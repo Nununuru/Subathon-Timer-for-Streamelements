@@ -1,6 +1,7 @@
-let fields;
-
 const timer = document.getElementById('timer');
+const eventText = document.getElementById('event-text');
+
+let fields;
 let timerInSeconds = 0;
 let timerRunning = false;
 let timerMaxReached = false;
@@ -11,7 +12,6 @@ let timeAdded = 0;
 let happyHour = false;
 let happyHourType = '';
 
-const eventText = document.getElementById('event-text');
 const eventQueue = [];
 
 // ON WIDGET LOAD
@@ -26,13 +26,16 @@ window.addEventListener('onWidgetLoad', (obj) => {
 });
 
 function runTimer() {
-  if (timerInSeconds > 0 && timerRunning) timerInSeconds -= 1;
+  if (timerInSeconds > 0 && timerRunning) {
+    if (timerPristine) timerPristine = false;
+    timerInSeconds -= 1
+  }
   if (timerInSeconds === 0 && !timerPristine) timerFinished = true;
-  updateTimer();
+  updateHTMLTimer();
   setTimeout(runTimer, 1000);
 }
 
-function updateTimer()  {
+function updateHTMLTimer()  {
   let hours = Math.floor(timerInSeconds / 3600);
   let mins = Math.floor((timerInSeconds - (hours * 3600)) / 60);
   let secs = timerInSeconds % 60;
@@ -48,29 +51,15 @@ function runEventQueue() {
   eventText.innerHTML = '';
 
   if (eventQueue.length > 0) {
-    timerPristine = true;
-
     const event = eventQueue.shift();
     const result = addSeconds(event.amount);
 
-    if (result) {
-      if (fields.enableEventText) {
-        eventText.innerHTML = event.text;
-      }
+    if (result && fields.enableEventText) {
+      eventText.innerHTML = event.text;
     }
   }
 
   setTimeout(runEventQueue, fields.timerEventTextDuration * 1000);
-}
-
-function updateEventText(userName, amount) {
-  const defaultEventText = fields.timerEventText;
-  const resultText = defaultEventText.replace('[viewer]', userName).replace('[amount]', amount)
-
-  eventQueue.push({
-    text: resultText,
-  	amount: amount
-  });
 }
 
 // ON EVENT RECEIVED
@@ -118,9 +107,9 @@ function handleSubs(event) {
 
   if (event.hasOwnProperty('bulkGifted')) {
     if (event.bulkGifted) {
-      subIncrease(event.sender, tier, event.amount);
+      subIncrease(event.sender, `${tier}`, event.amount);
     } else if (event.gifted) {
-      subIncrease(event.sender, tier, 1);
+      subIncrease(event.sender, `${tier}`, 1);
     }
   } else if (event.hasOwnProperty('isCommunityGift') && event.isCommunityGift) {
     // Ignore, because part of bulk gift
@@ -132,11 +121,11 @@ function handleSubs(event) {
 function subIncrease(name, tier, amount) {
   let increase = 0;
 
-  if ((tier == '1000' || tier == 'prime') && fields.sub1Enabled) {
+  if ((tier === '1000' || tier === 'prime') && fields.sub1Enabled) {
     increase = (fields.sub1Increase * amount);
-  } else if (tier == '2000' && fields.sub2Enabled) {
+  } else if (tier === '2000' && fields.sub2Enabled) {
     increase = (fields.sub2Increase * amount);
-  } else if (tier == '3000' && fields.sub3Enabled) {
+  } else if (tier === '3000' && fields.sub3Enabled) {
     increase = (fields.sub3Increase * amount);
   }
 
@@ -171,7 +160,7 @@ function handleCommands(data) {
   const commandAction = `${messageParts[1]}`.toLowerCase();
   const commandValue = `${messageParts[2]}`.toLowerCase();
 
-  if (command.toLowerCase() === fields.commandWord.toLowerCase() && badge && (isBroadcaster(badge) || isModWithCommandsEnabled(badge))) {
+  if (command.toLowerCase() === fields.commandWord.toLowerCase() && badge && (isBroadcaster(badge) || isMod(badge))) {
 
     switch (commandAction) {
       case 'stop':
@@ -209,10 +198,6 @@ function isBroadcaster(badge) {
   return badge.type === 'broadcaster';
 }
 
-function isModWithCommandsEnabled(badge) {
-  return badge.type === 'moderator' && fields.modCommandsEnabled;
-}
-
 function isMod(badge) {
   return badge.type === 'moderator';
 }
@@ -241,7 +226,7 @@ function setTimeByTimeString(value) {
   if (!value && typeof value !== 'number') return;
   
   if (value.includes(':')) {
-  	const valueParts = value.split(':');
+    const valueParts = value.split(':');
     if (valueParts.length === 3) {
       timerInSeconds = 0;
       addTimeByTimeString(value);
@@ -252,32 +237,26 @@ function setTimeByTimeString(value) {
 function addHours(hours) {
   if (!hours) return;
   hoursInSeconds = parseInt(hours, 10) * 3600;
-  if (timerInSeconds + hoursInSeconds < 0) {
-  	timerInSeconds = 0;
-    return;
-  }
-  timerInSeconds += hoursInSeconds;
-  timeAdded += hoursInSeconds;
+
+  addSeconds(hoursInSeconds);
 }
 
 function addMinutes(mins) {
   if (!mins) return;
   minsInSeconds = parseInt(mins, 10) * 60;
-  if (timerInSeconds + minsInSeconds < 0) {
-  	timerInSeconds = 0;
-    return;
-  }
-  timerInSeconds += minsInSeconds;
-  timeAdded += minsInSeconds;
+
+  addSeconds(minsInSeconds);
 }
 
 function addSeconds(secs) {
   if (!secs) return false;
   secs = parseInt(secs, 10);
+
   if (timerInSeconds + secs < 0) {
-  	timerInSeconds = 0;
+    timerInSeconds = 0;
     return false;
   }
+
   timerInSeconds += secs;
   timeAdded += secs;
   return secs;
@@ -288,7 +267,7 @@ function addSecondsThroughEvent(secs, name) {
   if (fields.timerMaxValueEnabled && timerMaxReached) return;
 
   if (fields.timerMaxValueEnabled) {
-  	if (timeAdded + secs >= timerMax) {
+    if (timeAdded + secs >= timerMax) {
       timerMaxReached = true;
       const overflowSecs = timeAdded + secs - timerMax;
       secs = secs - overflowSecs;
@@ -297,15 +276,21 @@ function addSecondsThroughEvent(secs, name) {
   updateEventText(name, secs);
 }
 
+function updateEventText(userName, amount) {
+  const defaultEventText = fields.timerEventText;
+  const resultText = defaultEventText.replace('[viewer]', userName).replace('[amount]', amount)
+
+  eventQueue.push({
+    text: resultText,
+  	amount: amount
+  });
+}
+
+// HAPPY HOUR LOGIC
 function checkAndConsiderHappyHour(amount, type) {
   if (!happyHour) return amount;
 
-  if (Array.isArray(type)) {
-  	const findType = type.find(singleType => happyHourType.startsWith(singleType));
-    return findType ? amount * fields.happyHourAmount : amount;  
-  }
-
-  return happyHourType.startsWith(type) ? fields.happyHourAmount * amount : amount;
+  return happyHourType.startsWith(type) ? fields.happyHourMultiplier * amount : amount;
 }
 
 function startHappyHour(type) {

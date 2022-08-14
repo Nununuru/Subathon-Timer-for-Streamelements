@@ -2,7 +2,7 @@
   "timerStartValueHours": {
     "type": "number",
     "label": "Start value hours",
-    "value": 2,
+    "value": 4,
     "min": 0,
     "step": 1,
     "group": "Timer Settings"
@@ -34,7 +34,7 @@
   "timerMaxValueHours": {
     "type": "number",
     "label": "Max time hours",
-    "value": 0,
+    "value": 48,
     "min": 0,
     "step": 1,
     "group": "Timer Settings"
@@ -82,7 +82,7 @@
   },
   "followIncrease": {
     "type": "number",
-    "value": 1,
+    "value": 10,
     "min": 0,
     "step": 1,
     "group": "Follow Events"
@@ -90,13 +90,13 @@
 
   "sub1Enabled": {
     "type": "checkbox",
-    "label": "Enable tier 1/prime sub events",
+    "label": "Enable tier 1/prime sub events (in seconds)",
     "value": true,
     "group": "Sub Events"
   },
   "sub1Increase": {
     "type": "number",
-    "value": 10,
+    "value": 60,
     "min": 0,
     "step": 1,
     "group": "Sub Events"
@@ -104,13 +104,13 @@
 
   "sub2Enabled": {
     "type": "checkbox",
-    "label": "Enable tier 2 sub events",
+    "label": "Enable tier 2 sub events (in seconds)",
     "value": true,
     "group": "Sub Events"
   },
   "sub2Increase": {
     "type": "number",
-    "value": 20,
+    "value": 120,
     "min": 0,
     "step": 1,
     "group": "Sub Events"
@@ -118,13 +118,13 @@
 
   "sub3Enabled": {
     "type": "checkbox",
-    "label": "Enable tier 3 sub events",
+    "label": "Enable tier 3 sub events (in seconds)",
     "value": true,
     "group": "Sub Events"
   },
   "sub3Increase": {
     "type": "number",
-    "value": 50,
+    "value": 300,
     "min": 0,
     "step": 1,
     "group": "Sub Events"
@@ -132,13 +132,13 @@
 
   "cheersEnabled": {
     "type": "checkbox",
-    "label": "Enable cheer events (per bit)",
+    "label": "Enable cheer events (seconds per bit)",
     "value": true,
     "group": "Cheer Events"
   },
   "cheersIncrease": {
     "type": "number",
-    "value": 0.1,
+    "value": 0.5,
     "min": 0,
     "step": 0.1,
     "group": "Cheer Events"
@@ -146,13 +146,13 @@
 
   "tipsEnabled": {
     "type": "checkbox",
-    "label": "Enable tip events (per 1 unit)",
+    "label": "Enable tip events (seconds per 1 unit)",
     "value": true,
     "group": "Tip Events"
   },
   "tipsIncrease": {
     "type": "number",
-    "value": 10,
+    "value": 30,
     "min": 0,
     "step": 1,
     "group": "Tip Events"
@@ -160,8 +160,8 @@
 
   "raidsEnabled": {
     "type": "checkbox",
-    "label": "Enable raid events (per viewer)",
-    "value": true,
+    "label": "Enable raid events (seconds per viewer)",
+    "value": false,
     "group": "Raid Events"
   },
   "raidsIncrease": {
@@ -171,27 +171,21 @@
     "step": 1,
     "group": "Raid Events"
   },
-  
+
   "commandWord": {
     "type": "text",
     "label": "Command Word (case insensitive)",
     "value": "!timer",
     "group": "Command Settings"
   },
-  "modCommandsEnabled": {
-    "type": "checkbox",
-    "label": "Additionally enable commands for mods",
-    "value": true,
-    "group": "Command Settings"
-  },
-  
+
   "happyHourCommand": {
     "type": "text",
     "label": "Command Word (case insensitive)",
     "value": "!happy",
     "group": "Happy Hour Settings"
   },
-  "happyHourAmount": {
+  "happyHourMultiplier": {
     "type": "number",
     "label": "Happy Hour Multiplier",
     "value": 2,
@@ -207,7 +201,7 @@
     "step": 1,
     "group": "Happy Hour Settings"
   },
-  
+
   "timerTextFont": {
     "type": "googleFont",
     "label": "Font family",
@@ -294,7 +288,7 @@
     "value": "#110717",
     "group": "Timer Text Styles"
   },
-  
+
   "eventTextFont": {
     "type": "googleFont",
     "label": "Font family",
