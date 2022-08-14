@@ -154,7 +154,7 @@ function handleCheers(name, amount) {
 // HANDLE TIPS
 function handleTips(name, amount) {
   if (!fields.tipsEnabled) return;
-  addSecondsThroughEvent(checkAndConsiderHappyHour(amount * fields.tipsIncrease, ['tip', 'dono', 'dontation']) , name);
+  addSecondsThroughEvent(checkAndConsiderHappyHour(amount * fields.tipsIncrease, ['tip', 'dono', 'donation']) , name);
 }
 
 // HANDLE RAIDS
