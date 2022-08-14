@@ -1,5 +1,5 @@
 # Subatimer Subathon Timer for StreamElements
-Subathon Timer for StreamlEments. This is a custom StreamElements widget. 
+Subathon Timer for StreamElements. This is a custom StreamElements widget. 
 
 ## Setup
 1. Login to StreamElements
