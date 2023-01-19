@@ -1,7 +1,7 @@
 # Subathon Timer for StreamElements
 Subathon Timer for StreamElements. This is a custom StreamElements widget.
 
-Table of Contents
+**Table of Contents**
 * [Setup](#setup)
 * [Settings](#Settings)
     * [Timer Settings](#timer-settings)
