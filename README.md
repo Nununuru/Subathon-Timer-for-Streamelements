@@ -81,11 +81,11 @@ Start each command with the command word you set followed by the argument (`!tim
 To start and cancel happy hours you need to use the command word specified for happy hours followed by the argument (`!happy <argument>`). Here are all available options:
 - `start <type>`: Start happy hour with a specific type (`follows`, `subs`, `tips`, `cheers`/`bits` and  `raids`). If started all events of the type that was specified will be multiplied with the multiplier from the settings. You can only start ONE happy hour for one type at a time. Starting another will override the last one. <br>Example:
 ```
-!happy start follows // Will start happy hour for follows
+!happy start follows      // Will start happy hour for follows
 
-!happy start bits // Will overwrite current happy hour & restarts duration
+!happy start bits         // Will overwrite current happy hour & restarts duration
 
-!happy cancel // Will cancel currently active happy hour
+!happy cancel             // Will cancel currently active happy hour
 ```
 - `cancel`: Cancel currently active happy hour.
 
