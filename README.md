@@ -1,6 +1,21 @@
 # Subathon Timer for StreamElements
 Subathon Timer for StreamElements. This is a custom StreamElements widget.
 
+Table of Contents
+* [Setup](#setup)
+* [Settings](#Settings)
+    * [Timer Settings](#timer-settings)
+    * [Event Text Settings](#event-text-settings)
+    * [Follow Events](#follow-events)
+    * [Sub Events](#sub-events)
+    * [Cheer Events](#cheer-events)
+    * [Tip Events](#tip-events)
+    * [Raid Events](#raid-events)
+    * [Command Settings](#command-settings)
+    * [Happy Hour Settings](#happy-hour-settings)
+    * [Timer Text Styles](#timer-text-styles)
+* [Q&A](#qa)
+
 ## Setup
 1. Login to StreamElements
 2. Go to "Streaming tools" -> "My overlays"
@@ -46,7 +61,6 @@ Configure the max time that can be added to the timer.
 
 ### Command Settings
 - `Command Word (case insensitive)`: Which word to use for commands (default: `!timer`). You do not need any special chars in the beginning, but it is recommended.
-- `Additionally enable commands for mods`: Disable this if you do not want your mods to be able to use the commands (in that case only the streamer can use them).
 
 #### How to
 Start each command with the command word you set followed by the argument (`!timer <argument>`). Here are all possible arguments:
