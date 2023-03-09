@@ -112,5 +112,5 @@ Style the text of the event messages displayed beneath the time.
 ### Can I use Subatimer with other services (e.g. tipeeestream, streamlabs, etc.)?
 This timer only works in StreamElements. However, since everything except donations comes from Twitch (follows, subs, cheers) you could use StreamElements and this widget additionally to whichever service you are using. Keep in mind that your mods (or you) have to add donations manually to the timer in that case, since this timer only listens to events coming through Streamelements.
 ### Can I disable the shadow (or border)?
-You can hide them by editing the color and using the transparency control and make the element fully transparent. This will basically hide it.
+You can hide them by editing the color and using the transparency control and making it fully transparent. This will basically hide it.
 For the border you could also just turn the width to 0.
