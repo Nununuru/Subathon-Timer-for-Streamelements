@@ -72,7 +72,9 @@ Start each command with the command word you set followed by the argument (`!tim
 - `add <time>`: Add time to timer. Examples:
     1. `!timer add 232`: Adds 232 seconds.
     2. `!timer add 22:11:13`: Adds 22 hours, 11 minutes, and 13 seconds.
-    3. `!timer add 2:-30:-12` Adds 2 hours and substracts 30 minutes and 12 seconds.
+    3. `!timer add 2:30:12` Adds 2 hours, 30 minutes and 12 seconds.  
+       `!timer add -3:00:00` Substracts 3 hours.  
+       `!timer add 1:-23:22` Adds 1 hour, substracts 23 minutes and adds 22 seconds.
 - `set <time>`: Set the timer to a specific time. As a format use `hh:mm:ss`. 
 
 ### Happy Hour Settings
