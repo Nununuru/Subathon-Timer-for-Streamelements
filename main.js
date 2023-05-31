@@ -287,10 +287,26 @@ function updateEventText(userName, amount) {
 }
 
 // HAPPY HOUR LOGIC
-function checkAndConsiderHappyHour(amount, type) {
+function checkAndConsiderHappyHour(amount, types) {
   if (!happyHour) return amount;
 
-  return happyHourType.startsWith(type) ? fields.happyHourMultiplier * amount : amount;
+  return checkHappyHourType(types) ? fields.happyHourMultiplier * amount : amount;
+}
+
+function checkHappyHourType(types) {
+  if (!happyHourType) return false;
+  if (!types) return false;
+
+  if (Array.isArray(types)) {
+    const filterTypes = types.filter(t => happyHourType.startsWith(t));
+  	return filterTypes && filterTypes.length > 0;	    	
+  } else {
+  	if (happyHourType?.toLowerCase() === 'all') {
+    	return true;
+    } else {
+    	return happyHourType.startsWith(types);
+    }
+  }
 }
 
 function startHappyHour(type) {
