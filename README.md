@@ -83,15 +83,17 @@ Start each command with the command word you set followed by the argument (`!tim
 - `Happy Hour Duration (in hours)`: With how much the added time will be multiplied during happy hours.
 #### How to
 To start and cancel happy hours you need to use the command word specified for happy hours followed by the argument (`!happy <argument>`). Here are all available options:
-- `start <type>`: Start happy hour with a specific type (`follows`, `subs`, `tips`, `cheers`/`bits` and  `raids`). If started all events of the type that was specified will be multiplied with the multiplier from the settings. You can only start ONE happy hour for one type at a time. Starting another will override the last one. <br>Example:
+- `start <type>`: Start happy hour with a specific type (`follows`, `subs`, `tips`, `cheers`/`bits`, `raids` and `all`). If started all events of the type that was specified will be multiplied with the multiplier from the settings. You can only start ONE happy hour for one type at a time. Starting another will override the last one. 
+- `cancel`: Cancel currently active happy hour.<br>Examples:
 ```
 !happy start follows      // Will start happy hour for follows
 
 !happy start bits         // Will overwrite current happy hour & restarts duration
 
 !happy cancel             // Will cancel currently active happy hour
+
+!happy start all          // Start happy hour for all
 ```
-- `cancel`: Cancel currently active happy hour.
 
 ### Timer Text Styles
 Style the text of the time display.
